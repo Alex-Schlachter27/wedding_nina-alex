@@ -1,0 +1,37 @@
+<!-- <header>
+  <ul class="sidebar-menu">
+    <li class="sidebar-menu-item">
+      <a class="sidebar-menu-link" routerLink="/home">Home</a>
+    </li>
+    <li class="sidebar-menu-item">
+      <a class="sidebar-menu-link" routerLink="/paragraph#1" (click)="forceNavigate('1')">Paragraph 1</a>
+    </li>
+    <li class="sidebar-menu-item">
+      <a class="sidebar-menu-link" routerLink="/paragraph#2" (click)="forceNavigate('2')">Paragraph 2</a>
+    </li>
+    <li class="sidebar-menu-item">
+      <a class="sidebar-menu-link" routerLink="/paragraph#3" (click)="forceNavigate('3')">Paragraph 3</a>
+    </li>
+  </ul>
+</header>
+<div class="content">
+  <router-outlet></router-outlet>
+</div> -->
+<div class="loading-ui" *ngIf="loading">
+  <p>Loading...</p>
+</div>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+    <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <main>
+        <router-outlet #routerOutlet></router-outlet>
+    </main>
+    <!-- <div class="content">
+      <router-outlet></router-outlet>
+    </div> -->
+    </mat-sidenav-content>
+</mat-sidenav-container>

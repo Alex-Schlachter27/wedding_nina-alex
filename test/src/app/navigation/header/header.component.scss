@@ -1,0 +1,46 @@
+.header{
+    background-color: #9DB5B2;
+    height: 40px;
+    position: fixed;
+    top: 0
+
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+ 
+a:hover, a:active{
+    color: lightgray;
+}
+
+.img {
+    vertical-align:middle;
+}
+ 
+.navigation-items{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ 
+mat-toolbar{
+    border-radius: 3px;
+}
+ 
+@media(max-width: 959px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+}
+
+.sidebar-menu-link {
+    display: block;
+    color: cadetblue;
+    text-decoration: none;
+    width: 120px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+  }

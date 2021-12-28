@@ -1,0 +1,46 @@
+<mat-toolbar class="header">
+    <!-- Defines when the nav-side shall be used! -->
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div>
+         <!-- LOGO -->
+        <ng-container logoContent>
+
+            <!-- Logo here -->
+            <img src="..\assets\logo1.png" height="40px" class="img"/>
+
+        </ng-container>
+        <!-- <a routerLink="/home">Owner-Account</a> -->
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <!-- <li>
+                <a routerLink="/main" fragment="invitation">Invitation</a>
+            </li>
+            <li>
+                <a routerLink="/main" fragment="schedule">Schedule</a>
+            </li>
+            <li>
+               <a routerLink="/main" fragment="rsvp">RSVP</a>
+            </li> -->
+            <li>
+                <a routerLink="/main#invitation" (click)="forceNavigate('invitation')">Invitation</a>
+            </li>
+            <li>
+                <a routerLink="/main#schedule" (click)="forceNavigate('schedule')">Schedule</a>
+            </li>
+            <li>
+               <a routerLink="/main#rsvp" (click)="forceNavigate('rsvp')">RSVP</a>
+            </li>
+            <li class="sidebar-menu-item">
+                <a class="sidebar-menu-link" routerLink="/paragraph#2" (click)="forceNavigate('2')">Paragraph 2</a>
+              </li>
+            <!-- <li class="sidebar-menu-item">
+                <a class="sidebar-menu-link" routerLink="/paragraph#3" (click)="forceNavigate('3')">Paragraph 3</a>
+              </li> -->
+        </ul>
+    </div>
+  </mat-toolbar>
