@@ -19,6 +19,11 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+// import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -30,7 +35,10 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    FlexLayoutModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   declarations: [
     AppComponent,
