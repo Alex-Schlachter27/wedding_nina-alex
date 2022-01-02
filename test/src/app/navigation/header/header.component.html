@@ -4,7 +4,7 @@
        <ng-container logoContent>
 
            <!-- Logo here -->
-           <img src="..\assets\logo.png" height="20px" class="img"/>
+           <img src="..\assets\logo.png" height="20px" class="img" (click)="goHome()"/>
 
        </ng-container>
        <!-- <a routerLink="/home">Owner-Account</a> -->
@@ -18,16 +18,16 @@
     <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
         <ul fxLayout fxLayoutGap="15px" class="navigation-items">
             <li>
-                <a routerLink="/paragraph#schedule" (click)="forceNavigate('schedule')">Schedule</a>
+                <a [routerLink]="links.schedule" (click)="forceNavigate('schedule')">Schedule</a>
             </li>
             <li>
-                <a routerLink="/paragraph#invitation" (click)="forceNavigate('invitation')">Invitation</a>
+                <a [routerLink]="links.invitation" (click)="forceNavigate('invitation')">Invitation</a>
             </li>
             <li>
-               <a routerLink="/paragraph#rsvp" (click)="forceNavigate('rsvp')">RSVP</a>
+               <a [routerLink]="links.rsvp" (click)="forceNavigate('rsvp')">RSVP</a>
             </li>
             <li>
-                <a routerLink="/paragraph#location" (click)="forceNavigate('location')">Location</a>
+                <a [routerLink]="links.location" (click)="forceNavigate('location')">Location</a>
              </li>
         </ul>
     </div>

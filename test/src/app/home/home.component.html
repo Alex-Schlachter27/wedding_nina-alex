@@ -1,130 +1,21 @@
+<div style="height:90vh" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="25px">
 
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
+    <p>Bitte gebe deinen Zuganscode aus der Einladung ein:</p>
 
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
 
+        <mat-form-field style="width: 200px" appearance="fill">
+            <mat-label>Zugangscode</mat-label>
+            <input matInput [(ngModel)]="passCode">
+        </mat-form-field>
 
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-
-
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-
-
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-
-
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-
-
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-
-
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-
-
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-
-
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-
-
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
-<h3>This is Home component</h3>
+        <button class="add-btn" *ngIf="passCode" (click)="goToMain()" matTooltip="Und los!" mat-mini-fab color="primary" aria-label="Und los!">
+            <mat-icon>thumb_up_alt</mat-icon>
+        </button>
+        
+    </div>
+    
+    
+    <!-- <button mat-stroked-button class="full-width" *ngIf="passCode" (click)="goToMain()"></button> -->
+    
+</div>
