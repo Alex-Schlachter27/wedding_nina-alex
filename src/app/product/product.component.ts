@@ -20,6 +20,8 @@ export class ProductComponent implements OnInit {
     name: "",
     amount: "",
     code: "",
+    comment: "",
+    songs: "",
   }
 
   public location = {
@@ -71,7 +73,7 @@ export class ProductComponent implements OnInit {
 
   submitRSVP() {
     console.log(this.inputData)
-    const params = this.inputData = {email: 'alex270494@web.de', name: 'alex', amount: 1, code: '220527'}
+    const params = this.inputData //= {email: 'alex270494@web.de', name: 'alex', amount: 1, code: '220527'}
     try {
       if(!this.inputData.name || this.inputData.name == "") throw "Bitte gebe deinen Namen an!";
       if(!this.inputData.email || this.inputData.email == "") throw "Bitte gebe deine Email-Adresse an!";
