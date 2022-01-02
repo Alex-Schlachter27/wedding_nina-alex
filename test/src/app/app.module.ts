@@ -22,8 +22,6 @@ import { MatListModule } from '@angular/material/list';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
-// import { FormsModule } from '@angular/forms';
-
 
 
 @NgModule({
@@ -38,7 +36,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatListModule,
     FlexLayoutModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   declarations: [
     AppComponent,

@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   public passCode: string = "";
+  public wrongCode: boolean = false;
 
   constructor(
     private _router: Router,
@@ -34,7 +35,10 @@ export class HomeComponent implements OnInit {
           code: this.passCode
         }
       }
-    );
+    )}
+    else {
+      this.wrongCode = true;
+      this.passCode = ""
     }
   }
 

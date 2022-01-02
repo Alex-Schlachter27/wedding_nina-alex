@@ -1,13 +1,31 @@
-.container {
-  height: 300px;
+.container-green {
   width: 100%;
-  background-color: rgba(100,100,100,0.4);
+  background-color: #d5e0de;
+  padding: 10px
+}
+
+.container-grey {
+  width: 100%;
+  background-color: #f2f2f2ef;
+  padding: 10px
+}
+
+.bottom-container {
+  width: 100%;
+  height: 50px;
+  border-bottom:  1px solid grey;
+}
+
+.footer {
+  width: 100%;
+  height: 50px;
 }
 
 .invitation {
   height: 200px;
   width: 100%;
-  background-color: rgba(241, 241, 241, 0.939);
+  padding: 10px;
+  background-color: #d5e0de;
 }
 
 .timeline-img {
@@ -22,4 +40,35 @@
 
 .full-width {
   width: 100%;
+}
+
+/* ==========================================================================
+Footer
+========================================================================== */
+
+.to-top-wrapper {
+  font-size: 30px;
+  display: block;
+  cursor: pointer;
+  margin: -25px auto 50px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border: 1px solid grey;
+  background: #fff;
+}
+span.fa-heart {
+  color: #ff415c;
+  font-size: 18px;
+  margin: 0 2px;
+}
+
+.totop {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  color: #9DB5B2;
+  display: inline-block;
+  font-size: 45px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }

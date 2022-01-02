@@ -6,23 +6,102 @@
   </div>
 </section>
 
-<section>
-  <h2 id="invitation">Invitation</h2>
-  <p>Wir freuen uns euch am 27 <sup>en</sup> Mai 2022 auf unserer Hochzeit zu sehen und gemeinsam zu feiern!</p>
-  <p>
-    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-  </p>
-  <p>
-    "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
-  </p>
-  <p>
-    "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
-  </p>
+<section id="invitation">
+  <div class="invitation">
+    <h2 style="text-align: center;">Wir heiraten!</h2>
+    <p>Wir freuen uns euch am 27en Mai 2022 auf unserer Hochzeit zu sehen und gemeinsam zu feiern!</p>
+  </div>
+  
+</section>
+<section id="location">
+  <div class="container-grey">
+    <google-map
+      height="500px"
+      width="100%"
+      [center]="location"
+    ></google-map>
+  </div>
 </section>
 
 <section id="rsvp">
-  <div class="container">
-    RSVP
+  <div class="container-green">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+      <h3>Worauf wartest du?</h3>
+      <p style="width: 80vw; text-align: center;">Wir würden uns sehr freuen, wenn du vor dem 01. Februar 2022 deine Rückmeldung abgeben könntest ​❤️🙏​.</p>
+      <div fxLayout="column" fxLayoutAlign="center strech" fxLayoutGap.gt-xs="10px">
+
+        <!-- Row 1 -->
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center" >
+
+          <mat-form-field style="width: 200px; padding-right: 10px" style.gt-xs="width: 200px" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="inputData.name" required>
+          </mat-form-field>
+
+          <mat-form-field style="width: 200px; padding-right: 10px" style.gt-xs="width: 200px" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" [(ngModel)]="inputData.email" required>
+          </mat-form-field>
+
+        </div>
+        <!-- Row 2 -->
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center">
+
+          <mat-form-field style="width: 200px; padding-right: 10px" style.gt-xs="width: 200px" appearance="fill">
+              <mat-label>Anzahl Personen</mat-label>
+              <input matInput type="number" [(ngModel)]="inputData.amount" max="5" required>
+              <span matSuffix>pers.</span>
+          </mat-form-field>
+
+          <mat-form-field style="width: 200px; padding-right: 10px" style.gt-xs="width: 200px" appearance="fill">
+            <mat-label>Code</mat-label>
+            <input matInput [(ngModel)]="inputData.code" required>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field style="padding-right: 10px" appearance="fill">
+          <mat-label>Kommentar</mat-label>
+          <textarea matInput
+            autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            [(ngModel)]="inputData.comment"
+          ></textarea>
+        </mat-form-field>
+
+        <mat-form-field style="padding-right: 10px" appearance="fill">
+          <mat-label matTooltip='Hier kannst du uns besondere Songwunsche mitteilen. Wir geben diese an unseren DJ weiter'>
+            Songwünsche
+            <mat-icon>info_outline</mat-icon>
+          </mat-label>
+          <textarea matInput
+            autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            [(ngModel)]="inputData.comment"
+          ></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="basic" class="full-width" (click)="submitRSVP()"
+        matTooltip="Verbindlich anmelden">Ja, meld mich an!
+      </button>
+      </div>
+    </div>
   </div>
-</section> 
+</section>
+
+<div class="bottom-container"></div>
+
+<section id="footer">
+  <div class="footer">
+      <div class="col-sm-12 text-center content">
+          <span class="to-top-wrapper">
+            <a [routerLink]="links.schedule" (click)="forceNavigate('schedule')">
+              <mat-icon class="totop"> expand_less </mat-icon>
+            </a>
+          </span>
+          <p style="text-align: center;">Erstellt von Alex mit ganz arg viel ❤️ für Nina</p>
+      </div>
+  </div>
+</section>
 </div>
