@@ -1,18 +1,26 @@
-<div *ngIf="check">
-
-<section id="schedule">
-  <div class="image-container">
-      <img src="..\..\assets\images\n&a\schedule.jpg" alt="schedule" class="timeline-img">
-  </div>
-</section>
+<div *ngIf="check && passCode">
 
 <section id="invitation">
   <div class="invitation">
-    <h2 style="text-align: center;">Wir heiraten!</h2>
-    <p>Wir freuen uns euch am 27en Mai 2022 auf unserer Hochzeit zu sehen und gemeinsam zu feiern!</p>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <h2>YES WE DO</h2>
+      <h2 style="color: white">|</h2>
+      <h2 style="color: #9DB5B2">27. MAI 2022</h2>
+    </div>
+    
+    <p style="text-align: center;">Wir trauen uns am 27. Mai 2022 um 16 Uhr im Hoftheather in Baienfurt.</p>
+    <p style="text-align: center;">Zusammen mit euch möchten wir diesen Tag zu einem unvergesslichen Ereignis machen.</p>
+    <p style="text-align: center;">Auf dieser Website findet ihr alle Infos rund um Location, Tagesablauf, Anmeldung, etc. Klickt euch doch einfach durch! 😊 </p>
   </div>
   
 </section>
+
+<section id="schedule">
+  <div class="image-container">
+      <img src="assets\images\n&a\schedule.png" alt="schedule" class="timeline-img">
+  </div>
+</section>
+
 <section id="location">
   <div class="container-grey">
     <google-map
@@ -53,14 +61,14 @@
               <span matSuffix>pers.</span>
           </mat-form-field>
 
-          <mat-form-field style="width: 200px; padding-right: 10px" style.gt-xs="width: 200px" appearance="fill">
+          <!-- <mat-form-field style="width: 200px; padding-right: 10px" style.gt-xs="width: 200px" appearance="fill">
             <mat-label>Code</mat-label>
             <input matInput [(ngModel)]="inputData.code" required>
-          </mat-form-field>
+          </mat-form-field> -->
         </div>
 
         <mat-form-field style="padding-right: 10px" appearance="fill">
-          <mat-label>Kommentar</mat-label>
+          <mat-label>Kommentar (Allergien, vegetarisch, vegan, sonstiges)</mat-label>
           <textarea matInput
             autosize="cdkTextareaAutosize"
             cdkAutosizeMinRows="1"
