@@ -17,7 +17,8 @@ const routes: Routes = [
   {
     path: 'paragraph',
     loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
-  }
+  },
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
