@@ -1,20 +1,39 @@
-<div *ngIf="check">
+<div *ngIf="check && passCode">
 
-<section id="schedule">
-  <div class="image-container">
-      <img src="..\..\assets\images\n&a\schedule.jpg" alt="schedule" class="timeline-img">
-  </div>
-</section>
+  <section id="top" style="margin: -5px">
+    <img id="top" src="assets\images\n&a\Top3_linked.png" alt="top-picture" class="top-single-img">
+    <!-- <div fxLayout="row" fxLayoutAlign="center center"  class="image-container">
+      <img src="assets\images\n&a\Top3.jpg" alt="schedule" class="top-img">
+      <img src="assets\images\n&a\Top3.jpg" alt="schedule" class="top-img">
+      <img src="assets\images\n&a\Top3.jpg" alt="schedule" class="top-img">
+      <img src="assets\images\n&a\Top3.jpg" alt="schedule" class="top-img">
+  </div> -->
+    
+  </section>
 
 <section id="invitation">
   <div class="invitation">
-    <h2 style="text-align: center;">Wir heiraten!</h2>
-    <p>Wir freuen uns euch am 27en Mai 2022 auf unserer Hochzeit zu sehen und gemeinsam zu feiern!</p>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <h2>YES WE DO</h2>
+      <h2 style="color: white">|</h2>
+      <h2 style="color: #9DB5B2">27. MAI 2022</h2>
+    </div>
+    
+    <p style="text-align: center;">Wir trauen uns am 27. Mai 2022 um 16 Uhr im Hoftheather in Baienfurt.</p>
+    <p style="text-align: center;">Zusammen mit euch möchten wir diesen Tag zu einem unvergesslichen Ereignis machen.</p>
+    <p style="text-align: center;">Auf dieser Website findet ihr alle Infos rund um Location, Tagesablauf, Anmeldung, etc. Klickt euch doch einfach durch! 😊 </p>
   </div>
   
 </section>
+
+<section id="schedule">
+  <div class="image-container">
+      <img src="assets\images\n&a\schedule.png" alt="schedule" class="timeline-img">
+  </div>
+</section>
+
 <section id="location">
-  <div class="container-grey">
+  <div class="container-maps">
     <google-map
       height="500px"
       width="100%"
@@ -24,8 +43,8 @@
 </section>
 
 <section id="rsvp">
-  <div class="container-green">
-    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="15px">
+  <div class="container-rsvp">
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
       <h3>Worauf wartest du?</h3>
       <p style="width: 80vw; text-align: center;">Wir würden uns sehr freuen, wenn du vor dem 01. Februar 2022 deine Rückmeldung abgeben könntest ​❤️🙏​.</p>
       <div fxLayout="column" fxLayoutAlign="center strech" fxLayoutGap.gt-xs="10px">
@@ -33,12 +52,16 @@
         <!-- Row 1 -->
         <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center" >
 
-          <mat-form-field style="width: 200px; padding-right: 10px" style.gt-xs="width: 200px" appearance="fill">
+          <mat-form-field 
+            ngClass.gt-xs="myNarrowClass"
+            ngClass="myWideClass" appearance="fill">
             <mat-label>Name</mat-label>
             <input matInput [(ngModel)]="inputData.name" required>
           </mat-form-field>
 
-          <mat-form-field style="width: 200px; padding-right: 10px" style.gt-xs="width: 200px" appearance="fill">
+          <mat-form-field 
+            ngClass.gt-xs="myNarrowClass"
+            ngClass="myWideClass" appearance="fill">
               <mat-label>Email</mat-label>
               <input matInput type="email" [(ngModel)]="inputData.email" required>
           </mat-form-field>
@@ -47,20 +70,24 @@
         <!-- Row 2 -->
         <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center">
 
-          <mat-form-field style="width: 200px; padding-right: 10px" style.gt-xs="width: 200px" appearance="fill">
+          <mat-form-field 
+          ngClass.gt-xs="myNarrowClass"
+          ngClass="myWideClass" appearance="fill">
               <mat-label>Anzahl Personen</mat-label>
               <input matInput type="number" [(ngModel)]="inputData.amount" max="5" required>
               <span matSuffix>pers.</span>
           </mat-form-field>
 
-          <mat-form-field style="width: 200px; padding-right: 10px" style.gt-xs="width: 200px" appearance="fill">
-            <mat-label>Code</mat-label>
-            <input matInput [(ngModel)]="inputData.code" required>
+          <mat-form-field 
+          ngClass.gt-xs="myNarrowClass"
+          ngClass="myWideClass" appearance="fill">
+            <mat-label>Telefon</mat-label>
+            <input matInput  type="tel" [(ngModel)]="inputData.phone">
           </mat-form-field>
         </div>
 
-        <mat-form-field style="padding-right: 10px" appearance="fill">
-          <mat-label>Kommentar</mat-label>
+        <mat-form-field ngClass.gt-xs="myNarrowClassPlus" ngClass="myWideClass" appearance="fill">
+          <mat-label>Kommentar (Allergien, vegetarisch, vegan, sonstiges)</mat-label>
           <textarea matInput
             autosize="cdkTextareaAutosize"
             cdkAutosizeMinRows="1"
@@ -69,10 +96,14 @@
           ></textarea>
         </mat-form-field>
 
-        <mat-form-field style="padding-right: 10px" appearance="fill">
-          <mat-label matTooltip='Hier kannst du uns besondere Songwunsche mitteilen. Wir geben diese an unseren DJ weiter'>
+        <mat-form-field ngClass.gt-xs="myNarrowClassPlus" ngClass="myWideClass" appearance="fill">
+          <mat-label>
             Songwünsche
-            <mat-icon>info_outline</mat-icon>
+            <mat-icon class="pe"
+            matTooltip='Hier kannst du uns besondere Songwünsche mitteilen. Wir geben diese an unseren DJ weiter'>
+              info_outline
+            </mat-icon>
+            
           </mat-label>
           <textarea matInput
             autosize="cdkTextareaAutosize"
@@ -92,16 +123,18 @@
 
 <div class="bottom-container"></div>
 
-<section id="footer">
   <div class="footer">
-      <div class="col-sm-12 text-center content">
-          <span class="to-top-wrapper">
-            <a [routerLink]="links.schedule" (click)="forceNavigate('schedule')">
-              <mat-icon class="totop"> expand_less </mat-icon>
+        <div fxLayout="row" fxLayoutAlign="center center">
+        <button class="to-top-button" (click)="forceNavigate('top')">
+          <mat-icon class="totop"> arrow_circle_up </mat-icon>
+        </button>
+          <!-- <div class="to-top-wrapper">
+            <a [routerLink]="links.schedule" (click)="forceNavigate('top')">
+              <mat-icon class="totop"> arrow_circle_up </mat-icon>
             </a>
-          </span>
-          <p style="text-align: center;">Erstellt von Alex mit ganz arg viel ❤️ für Nina</p>
+          </div> -->
       </div>
   </div>
-</section>
 </div>
+
+<p style="text-align: center; margin-bottom: 20px;">Erstellt von Alex mit ganz arg viel ❤️ für Nina</p>
