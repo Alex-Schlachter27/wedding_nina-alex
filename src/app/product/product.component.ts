@@ -90,11 +90,17 @@ export class ProductComponent implements OnInit {
           params: {
             email: params.email,
             name: params.name,
-            code: params.code,
-            amount: params.amount            
+            phone: params.phone,
+            amount: params.amount,
+            songs: params.songs,         
+            comment: params.comment,
+            code: params.code            
           }
         }).subscribe(data => {
             console.log(data);
+            if(data.result == "success") {
+              alert("Du hast dich erfolgreich angemeldet! Wir freuen uns schon auf dich 😊")
+            }
         })
 
 

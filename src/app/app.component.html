@@ -3,11 +3,11 @@
   <p>Loading...</p>
 </div>
 
-<mat-sidenav-container>
-    <mat-sidenav #sidenav role="navigation" position="end">
+<mat-sidenav-container autosize style="font-family: 'Montserrat';">
+    <mat-sidenav #sidenav role="navigation" position="end" fixedInViewport="true">
     <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content style="box-sizing: border-box;">
     <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
     <main style="margin-top: 40px;">
         <router-outlet #routerOutlet></router-outlet>

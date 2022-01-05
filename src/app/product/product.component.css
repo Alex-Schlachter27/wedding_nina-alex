@@ -1,30 +1,35 @@
-.container-green {
+.container-rsvp {
   width: 100%;
   background-color: #d5e0de;
-  padding: 10px
+  padding: 10px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
 }
 
-.container-grey {
+.container-maps {
   width: 100%;
   background-color: #f2f2f2ef;
-  padding: 10px
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .bottom-container {
   width: 100%;
   height: 50px;
-  border-bottom:  1px solid grey;
+  border-bottom:  3px solid #d5e0de;
+  box-sizing: border-box;
 }
 
 .footer {
   width: 100%;
-  height: 50px;
+  height: 40px;
 }
 
 .invitation {
   width: 100%;
   padding: 10px;
   background-color: #d5e0de;
+  box-sizing: border-box;
 }
 
 .timeline-img {
@@ -32,42 +37,74 @@
     height: auto;
 }
 
+
+.top-single-img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  object-position:center;
+}
+
+.top-img {
+  width: 25%;
+  max-height: 500px;
+  object-fit: cover;
+  object-position:center;
+}
+
 .image-container {
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .full-width {
   width: 100%;
 }
 
+.pe {
+  pointer-events: auto;
+}
+
+.myNarrowClass {
+  width: 200px; 
+  padding-right: 10px;
+}
+
+.myNarrowClassPlus {
+  width: 410px; 
+  padding-right: 10px;
+}
+
+.myWideClass {
+  width: 400px;
+}
+
 /* ==========================================================================
 Footer
 ========================================================================== */
 
-.to-top-wrapper {
-  font-size: 30px;
-  display: block;
+.to-top-button {
+  display:block;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  margin: -25px auto 50px;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  border: 1px solid grey;
-  background: #fff;
-}
-span.fa-heart {
-  color: #ff415c;
-  font-size: 18px;
-  margin: 0 2px;
+  background-color: white;
+  margin: -20px auto 50px;
+  border: 1px;
+  color: #d5e0de4c;
+  /* opacity: 0; */
+  transition: all .2s ease-in-out;
 }
 
 .totop {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  color: #9DB5B2;
+  color: #d5e0de;
   display: inline-block;
-  font-size: 45px;
+  transform: scale(2);
+  text-align:center;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
