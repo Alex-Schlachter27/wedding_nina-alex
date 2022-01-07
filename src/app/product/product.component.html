@@ -1,6 +1,6 @@
 <div *ngIf="check && passCode">
 
-  <section id="top" style="margin: -5px">
+  <section id="top" style="margin-top: -5px">
     <img id="top" src="assets\images\n&a\Top3_linked.png" alt="top-picture" class="top-single-img">
     <!-- <div fxLayout="row" fxLayoutAlign="center center"  class="image-container">
       <img src="assets\images\n&a\Top3.jpg" alt="schedule" class="top-img">
@@ -14,14 +14,15 @@
 <section id="invitation">
   <div class="invitation">
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-      <h2>YES WE DO</h2>
+      <h2 style="font-weight: 100; color: #354F52">YES WE DO</h2>
       <h2 style="color: white">|</h2>
-      <h2 style="color: #9DB5B2">27. MAI 2022</h2>
+      <h2 style="font-weight: 100; color: #9DB5B2">27. MAI 2022</h2>
     </div>
     
-    <p style="text-align: center;">Wir trauen uns am 27. Mai 2022 um 16 Uhr im Hoftheather in Baienfurt.</p>
-    <p style="text-align: center;">Zusammen mit euch möchten wir diesen Tag zu einem unvergesslichen Ereignis machen.</p>
-    <p style="text-align: center;">Auf dieser Website findet ihr alle Infos rund um Location, Tagesablauf, Anmeldung, etc. Klickt euch doch einfach durch! 😊 </p>
+    <p class="text">Wir trauen uns am 27. Mai 2022 um 16 Uhr im Hoftheather in Baienfurt.</p>
+    <p class="text">Zusammen mit euch möchten wir diesen Tag zu einem unvergesslichen Ereignis machen.</p>
+    <p class="text">Auf dieser Website findet ihr alle Infos rund um Location, Tagesablauf, Anmeldung, etc. </p>
+    <p class="text">Klickt euch doch einfach durch! 😊 </p>
   </div>
   
 </section>
@@ -34,6 +35,15 @@
 
 <section id="location">
   <div class="container-maps">
+    <h2 class="section-title">LOCATION</h2>
+    <p class="text">Gefeiert wird im Hoftheater in Baienfurt:</p>
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="0px">
+      <p class="address">Hof 2</p>
+      <p class="address">88255 Baienfurt</p>
+      <p class="address">Germany</p>
+    </div>
+    <!-- <p class="text">Im restaurierten Farmhaus findet man alles vor was eine Hochzeit braucht. Es gibt genuegend Parkplaetze fuer alle Gaste, der traumhafte Aussenbreich lasst Sommergefuehle aufkommen und im Innenraum begeistert ein professioneller Theather-Saal mit traditionellem Holzfachwerk  🚘. </p> -->
+    <p class="text">Idyllisch gelegen zwischen Apfelbäumen und Wiesen inmitten des Schussentals bietet das alte Farmhaus mit seinen verschiedene Räumlichkeiten im Innen- und Außenbereich ein traumhaftes Ambiente für unsere Hochzeit. Genügend Parkplätze sind auch verfügbar!</p>
     <google-map
       height="500px"
       width="100%"
@@ -44,9 +54,10 @@
 
 <section id="rsvp">
   <div class="container-rsvp">
+    <h2 class="section-title">RSVP</h2>
     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
-      <h3>Worauf wartest du?</h3>
-      <p style="width: 80vw; text-align: center;">Wir würden uns sehr freuen, wenn du vor dem 01. Februar 2022 deine Rückmeldung abgeben könntest ​❤️🙏​.</p>
+      <h3 class="text">Worauf wartest du?</h3>
+      <p class="text">Wir würden uns sehr freuen, wenn du vor dem 01. Februar 2022 deine Rückmeldung abgeben könntest ​❤️🙏​.</p>
       <div fxLayout="column" fxLayoutAlign="center strech" fxLayoutGap.gt-xs="10px">
 
         <!-- Row 1 -->
@@ -137,4 +148,4 @@
   </div>
 </div>
 
-<p style="text-align: center; margin-bottom: 20px;">Erstellt von Alex mit ganz arg viel ❤️ für Nina</p>
+<p style="text-align: center; margin-bottom: 20px; color: #2F3E46">Erstellt von Alex mit ganz arg viel ❤️ für Nina</p>
