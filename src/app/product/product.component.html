@@ -33,7 +33,7 @@
     </div>
     
     <p class="text" i18n>We are getting married on May 27, 2022 in our hometown Ravensburg.</p>
-    <p class="text">Together with you, we will make this day an unforgettable experience.</p>
+    <p class="text">Together with you, we want to make this day an unforgettable experience.</p>
     <p class="text">On this website you will find all the information about the location, the schedule, RSVP, etc. </p>
     <p class="text">Just click your way through! 😊 </p>
   </div>
@@ -43,7 +43,7 @@
 <section id="schedule">
   <!-- DE -->
   <div *ngIf="lang=='de'" class="image-container">
-      <img src="assets\images\n&a\schedule.png" alt="schedule" class="timeline-img">
+      <img src="assets\images\n&a\schedule_de.png" alt="schedule" class="timeline-img">
   </div>
   <!-- EN -->
   <div *ngIf="lang=='en'" class="image-container">
@@ -105,16 +105,16 @@
 
   <!-- EN -->
   <div *ngIf="lang=='en'" class="invitation">
-    <h2 class="section-title">BESTIES</h2>
+    <h2 class="section-title">MAIDS OF HONOR</h2>
     <p class="text">An Isi for all your questions!</p>
-    <p class="text">For program suggestions, music requests or general questions about the wedding, just contact one of the two Isis and they will certainly be able to help you 😇.
+    <p class="text">For program suggestions, music requests or general questions about the wedding, just contact one of the two Isis and they will certainly be able to help you 😇
     </p>
     <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center" fxLayoutGap="10px">
       <mat-card class="card">
         <mat-card-header>
           <!-- <div mat-card-avatar class="card-image"></div> -->
           <mat-card-title>Isi Tauer</mat-card-title>
-          <mat-card-subtitle>Bestie Nina</mat-card-subtitle>
+          <mat-card-subtitle>Nina's maid of honor</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src="assets\images\besties\Isi_nina2.jpg" alt="Isi Tauer">
         <mat-card-content>
@@ -134,7 +134,7 @@
         <mat-card-header>
           <!-- <div mat-card-avatar class="card-image"></div> -->
           <mat-card-title>Isi Mossig</mat-card-title>
-          <mat-card-subtitle>Bestie Alex</mat-card-subtitle>
+          <mat-card-subtitle>Alex's maid of honor</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src="assets\images\besties\Isi_alex.jpg" alt="Isi Mossig">
         <mat-card-content>
@@ -177,7 +177,7 @@
   <!-- EN -->
   <div *ngIf="lang=='en'" class="container-maps">
     <h2 class="section-title">LOCATION</h2>
-    <p class="text">The celebration will take place in the Hoftheater in Baienfurt:</p>
+    <p class="text">The celebration will take place at the Hoftheater in Baienfurt:</p>
     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="0px">
       <p class="address">Hof 2</p>
       <p class="address">88255 Baienfurt</p>
@@ -190,6 +190,198 @@
       width="100%"
       [center]="location"
     ></google-map>
+  </div>
+</section>
+
+<section id="hotels">
+  <!-- DE -->
+  <div *ngIf="lang=='de'" class="container-hotels">
+    <h2 class="section-title">ÜBERNACHTUNG</h2>
+    <p class="text">Falls ihr nicht aus der Gegend seid, empfehlen wir euch ein Hotel in Ravensburg zu suchen.</p>
+    <!-- <p class="text">In Ravensburg könnt ihr den Samstag Morgen auf dem lokalen Markt verbringen und euch die schone Stadt anschauen.</p> -->
+    <p class="text">Für die nächtliche Fahrt vom Hoftheather in die Innenstadt oder Umgebung, haben wir für die Hochzeit einen Shuttle-Service engagiert. Riesen Dank an Tim an dieser Stelle 🙏​</p>
+    <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <mat-card class="card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Gasthof Ochsen</mat-card-title>
+          <mat-card-subtitle>Eichelstraße 17</mat-card-subtitle>
+          <mat-card-subtitle>88212 Ravensburg</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\hotels\ochsen.jpg" alt="Gasthaus Ochsen">
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="0px">
+            <p class="address">{{hotels.ochsen.tel}}</p>
+            <p class="address">{{hotels.ochsen.mail}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="basic" (click)="goToWebsite(hotels.ochsen.website)">
+            Website
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Hotel Zum Engel</mat-card-title>
+          <mat-card-subtitle>Marienplatz 71</mat-card-subtitle>
+          <mat-card-subtitle>88212 Ravensburg</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\hotels\engel.jpg" alt="Hotel Zum Engel">
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="0px">
+            <p class="address">{{hotels.engel.tel}}</p>
+            <p class="address">{{hotels.engel.mail}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="basic" (click)="goToWebsite(hotels.engel.website)">
+            Website
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Stadthaus GUT HÜGLE</mat-card-title>
+          <mat-card-subtitle>Obere Breite Str. 39</mat-card-subtitle>
+          <mat-card-subtitle>88212 Ravensburg</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\hotels\hugle.jpg" alt="Stadthaus GUT HÜGLE">
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="0px">
+            <p class="address">{{hotels.hugle.tel}}</p>
+            <p class="address">{{hotels.hugle.mail}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="basic" (click)="goToWebsite(hotels.hugle.website)">
+            Website
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Privat</mat-card-title>
+          <mat-card-subtitle>Melde dich bei Nina 😊</mat-card-subtitle>
+          <mat-card-subtitle>Zelt, Couch oder Gästezimmer</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\hotels\friend.jpg" alt="Gasthaus Ochsen">
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="0px">
+            <p class="address">{{hotels.friend.telShow}}</p>
+            <p class="address">{{hotels.friend.mail}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="basic" (click)="txtBesties(hotels.friend.tel)" matTooltip="Whatsapp">
+            Schreibe eine Whatsapp!
+            <!-- <a href="https://wa.me/4552605615/?text=test"></a> -->
+          </button>
+        </mat-card-actions>
+      </mat-card>
+      
+    </div>
+  </div>
+
+  <!-- EN -->
+  <div *ngIf="lang=='en'" class="container-hotels">
+    <h2 class="section-title">ACCOMMODATION</h2>
+    <p class="text">If you are not from the area, we recommend you to get a hotel room in Ravensburg.</p>
+    <!-- <p class="text">In Ravensburg könnt ihr den Samstag Morgen auf dem lokalen Markt verbringen und euch die schone Stadt anschauen.</p> -->
+    <p class="text">We arranged a shuttle service for the late night trip from the venue to downtown Ravensburg or surrounding areas for the wedding. Huge shout out to Tim 🙏​</p>
+    <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <mat-card class="card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Gasthof Ochsen</mat-card-title>
+          <mat-card-subtitle>Eichelstraße 17</mat-card-subtitle>
+          <mat-card-subtitle>88212 Ravensburg</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\hotels\ochsen.jpg" alt="Gasthaus Ochsen">
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="0px">
+            <p class="address">{{hotels.ochsen.tel}}</p>
+            <p class="address">{{hotels.ochsen.mail}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="basic" (click)="goToWebsite(hotels.ochsen.website)">
+            Website
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Hotel Zum Engel</mat-card-title>
+          <mat-card-subtitle>Marienplatz 71</mat-card-subtitle>
+          <mat-card-subtitle>88212 Ravensburg</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\hotels\engel.jpg" alt="Hotel Zum Engel">
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="0px">
+            <p class="address">{{hotels.engel.tel}}</p>
+            <p class="address">{{hotels.engel.mail}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="basic" (click)="goToWebsite(hotels.engel.website)">
+            Website
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Stadthaus GUT HÜGLE</mat-card-title>
+          <mat-card-subtitle>Obere Breite Str. 39</mat-card-subtitle>
+          <mat-card-subtitle>88212 Ravensburg</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\hotels\hugle.jpg" alt="Stadthaus GUT HÜGLE">
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="0px">
+            <p class="address">{{hotels.hugle.tel}}</p>
+            <p class="address">{{hotels.hugle.mail}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="basic" (click)="goToWebsite(hotels.hugle.website)">
+            Website
+          </button>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Private</mat-card-title>
+          <mat-card-subtitle>Reach out to Nina 😊</mat-card-subtitle>
+          <mat-card-subtitle>Tent, Couch or Guestroom</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\hotels\friend.jpg" alt="Gasthaus Ochsen">
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="0px">
+            <p class="address">{{hotels.friend.telShow}}</p>
+            <p class="address">{{hotels.friend.mail}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="basic" (click)="txtBesties(hotels.friend.tel)" matTooltip="Whatsapp">
+            Whatsapp me!
+            <!-- <a href="https://wa.me/4552605615/?text=test"></a> -->
+          </button>
+        </mat-card-actions>
+      </mat-card>
+      
+    </div>
   </div>
 </section>
 
@@ -368,7 +560,7 @@
   </div>
 
   <p *ngIf="lang=='de'"  style="text-align: center; margin-bottom: 20px; color: #2F3E46">Erstellt von Alex mit ganz arg viel ❤️ für Nina</p>
-  <p *ngIf="lang=='en'"  style="text-align: center; margin-bottom: 20px; color: #2F3E46">Crafter by Alex with lots of ❤️ for Nina</p>
+  <p *ngIf="lang=='en'"  style="text-align: center; margin-bottom: 20px; color: #2F3E46">Crafted by Alex with lots of ❤️ for Nina</p>
 </div>
 
 

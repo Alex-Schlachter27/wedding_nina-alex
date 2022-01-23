@@ -15,8 +15,10 @@ export class HeaderComponent implements OnInit {
   public links: any = {
     schedule: "/paragraph#schedule",
     invitation: "/paragraph#invitation",
+    support: "/paragraph#support",
     rsvp: "/paragraph#rsvp",
     location: "/paragraph#location",
+    hotels: "/paragraph#hotels",
   }
   
   constructor(

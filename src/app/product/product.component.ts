@@ -38,6 +38,29 @@ export class ProductComponent implements OnInit {
     }
   }
 
+  public hotels = {
+    ochsen: {
+      website: "https://ochsen-rv.de/uebernachten/",
+      tel: "+49 751 25 480",
+      mail: "info@ochsen-rv.de"
+    },
+    engel: {
+      website: "https://hotel-ravensburg.com/",
+      tel: "+49 751 363 6130",
+      mail: "info@hotel-ravensburg.com"
+    },
+    hugle: {
+      website: "https://www.guthuegle.de/ferienwohnung/ravensburg-innenstadt-stadtwohnung",
+      tel: "+49 751 189 5000",
+      mail: "info@guthuegle.de"
+    },
+    friend: {
+      tel: "4591976036",
+      telShow: "+45 91 97 60 36",
+      mail: "nina.heltmann@yahoo.de"
+    },
+  }
+
   public location = {
     lat: 47.82546157828619,
     lng: 9.638711915674572,
@@ -135,6 +158,10 @@ export class ProductComponent implements OnInit {
 
   public txtBesties(tel:string) {
     location.href = `https://wa.me/${tel}/`;
+  }
+
+  public goToWebsite(website:string) {
+    location.href = website;
   }
 
 }

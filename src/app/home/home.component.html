@@ -5,12 +5,21 @@
     padding-left: 20px;
     padding-right: 20px;"
     i18n="localized.home.typeCode|type the code"
-    >Bitte gebe deinen Zuganscode aus der Einladung ein:</p>
+    *ngIf="lang=='de'"
+    >Bitte gebe deinen Zugangscode aus der Einladung ein:</p>
+
+    <p style="text-align: center; 
+    color: #354F52;
+    padding-left: 20px;
+    padding-right: 20px;"
+    *ngIf="lang=='en'"
+    >Please enter your access code from the invitation:</p>
 
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
 
         <mat-form-field style="width: 200px" appearance="fill">
-            <mat-label i18n="localized.home.code|code">Zugangscode</mat-label>
+            <mat-label *ngIf="lang=='de'" i18n="localized.home.code|code">Zugangscode</mat-label>
+            <mat-label *ngIf="lang=='en'" >Code</mat-label>
             <input matInput [(ngModel)]="passCode">
         </mat-form-field>
 
@@ -19,14 +28,16 @@
         </button>
         
     </div>
+
     <!-- German or English -->
     <mat-button-toggle-group appearance="legacy" [(ngModel)]="lang">
         <mat-button-toggle *ngFor="let item of langOptions" [value]="item">
             {{ item }}
         </mat-button-toggle>
     </mat-button-toggle-group>
-    
-    <div *ngIf="wrongCode">Der Zugangscode war nicht korrekt. Versuche es erneut 😊</div>
+
+    <div *ngIf="wrongCode && lang=='de'">Der Zugangscode war nicht korrekt. Versuche es erneut 😊</div>
+    <div *ngIf="wrongCode && lang=='en'">The code is not correct. Please try again 😊</div>
     
     
     <!-- <button mat-stroked-button class="full-width" *ngIf="passCode" (click)="goToMain()"></button> -->
