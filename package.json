@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run translate && ng build --localize && cp src/redirect/index.html dist/index.html",
+    "deploy": "npm run translate &&  ng deploy --base-href=wedding_nina-alex --localize && cp src/redirect/index.html dist/index.html",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "translate": "ng extract-i18n --output-path src/locales && cp src/locales/messages.xlf src/locales/messages.en.xlf && xlf-translate --lang-file ./src/locales/en.yml ./src/locales/messages.en.xlf"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +32,7 @@
     "@angular-devkit/build-angular": "~12.2.3",
     "@angular/cli": "~12.2.3",
     "@angular/compiler-cli": "~12.2.0",
+    "@angular/localize": "^12.2.15",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
     "angular-cli-ghpages": "^1.0.0",

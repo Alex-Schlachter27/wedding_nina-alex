@@ -12,29 +12,152 @@
   </section>
 
 <section id="invitation">
-  <div class="invitation">
+  <div *ngIf="lang=='de'" class="invitation">
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
       <h2 style="font-weight: 100; color: #354F52">YES WE DO</h2>
       <h2 style="color: white">|</h2>
       <h2 style="font-weight: 100; color: #9DB5B2">27. MAI 2022</h2>
     </div>
     
-    <p class="text">Wir trauen uns am 27. Mai 2022 um 16 Uhr im Hoftheather in Baienfurt.</p>
+    <p class="text" i18n>Wir trauen uns am 27. Mai 2022 um 16 Uhr im Hoftheather in Baienfurt.</p>
     <p class="text">Zusammen mit euch möchten wir diesen Tag zu einem unvergesslichen Ereignis machen.</p>
     <p class="text">Auf dieser Website findet ihr alle Infos rund um Location, Tagesablauf, Anmeldung, etc. </p>
     <p class="text">Klickt euch doch einfach durch! 😊 </p>
+  </div>
+
+  <div *ngIf="lang=='en'" class="invitation">
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <h2 style="font-weight: 100; color: #354F52">YES WE DO</h2>
+      <h2 style="color: white">|</h2>
+      <h2 style="font-weight: 100; color: #9DB5B2">27. MAY 2022</h2>
+    </div>
+    
+    <p class="text" i18n>We are getting married on May 27, 2022 in our hometown Ravensburg.</p>
+    <p class="text">Together with you, we will make this day an unforgettable experience.</p>
+    <p class="text">On this website you will find all the information about the location, the schedule, RSVP, etc. </p>
+    <p class="text">Just click your way through! 😊 </p>
   </div>
   
 </section>
 
 <section id="schedule">
-  <div class="image-container">
+  <!-- DE -->
+  <div *ngIf="lang=='de'" class="image-container">
       <img src="assets\images\n&a\schedule.png" alt="schedule" class="timeline-img">
+  </div>
+  <!-- EN -->
+  <div *ngIf="lang=='en'" class="image-container">
+    <img src="assets\images\n&a\schedule_en.png" alt="schedule" class="timeline-img">
+  </div>
+</section>
+
+<section id="support">
+  <!-- DE -->
+  <div *ngIf="lang=='de'" class="invitation">
+    <h2 class="section-title">TRAUZEUGEN</h2>
+    <p class="text">Eine Isi für alle Fragen!</p>
+    <p class="text">Für Programmvorschläge, Musikwünsche oder generelle Fragen zur Hochzeit, wendet euch doch einfach an eine der beiden Isis und sie werden euch ganz bestimmt weiterhelfen können 😇.
+    </p>
+    <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <mat-card class="card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Isi Tauer</mat-card-title>
+          <mat-card-subtitle>Trauzeugin Nina</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="assets\images\besties\Isi_nina2.jpg" alt="Isi Tauer">
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="0px">
+            <p class="address">{{besties.tauer.telShow}}</p>
+            <p class="address">{{besties.tauer.mail}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="basic" (click)="txtBesties(besties.tauer.tel)" matTooltip="Whatsapp">
+            Schreibe eine Whatsapp!
+            <!-- <a href="https://wa.me/4552605615/?text=test"></a> -->
+          </button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card class="card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Isi Mossig</mat-card-title>
+          <mat-card-subtitle>Trauzeugin Alex</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="assets\images\besties\Isi_alex.jpg" alt="Isi Mossig">
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="0px">
+            <p class="address">{{besties.mossig.telShow}} </p>
+            <p class="address">{{besties.mossig.mail}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <!-- <a mat-raised-button href="https://wa.me/4552605615/?text=test"></a> -->
+          <button mat-raised-button color="basic" (click)="txtBesties(besties.mossig.tel)" matTooltip="Whatsapp">
+            Schreibe eine Whatsapp!
+            <!-- <a href="https://wa.me/4552605615/?text=test"></a> -->
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+  <!-- EN -->
+  <div *ngIf="lang=='en'" class="invitation">
+    <h2 class="section-title">BESTIES</h2>
+    <p class="text">An Isi for all your questions!</p>
+    <p class="text">For program suggestions, music requests or general questions about the wedding, just contact one of the two Isis and they will certainly be able to help you 😇.
+    </p>
+    <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <mat-card class="card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Isi Tauer</mat-card-title>
+          <mat-card-subtitle>Bestie Nina</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="assets\images\besties\Isi_nina2.jpg" alt="Isi Tauer">
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="0px">
+            <p class="address">{{besties.tauer.telShow}}</p>
+            <p class="address">{{besties.tauer.mail}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="basic" (click)="txtBesties(besties.tauer.tel)" matTooltip="Whatsapp">
+            Whatsapp me!
+            <!-- <a href="https://wa.me/4552605615/?text=test"></a> -->
+          </button>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card class="card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Isi Mossig</mat-card-title>
+          <mat-card-subtitle>Bestie Alex</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="assets\images\besties\Isi_alex.jpg" alt="Isi Mossig">
+        <mat-card-content>
+          <div fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="0px">
+            <p class="address">{{besties.mossig.telShow}} </p>
+            <p class="address">{{besties.mossig.mail}}</p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <!-- <a mat-raised-button href="https://wa.me/4552605615/?text=test"></a> -->
+          <button mat-raised-button color="basic" (click)="txtBesties(besties.mossig.tel)" matTooltip="Whatsapp">
+            Whatsapp me!
+            <!-- <a href="https://wa.me/4552605615/?text=test"></a> -->
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
 </section>
 
 <section id="location">
-  <div class="container-maps">
+  <!-- DE -->
+  <div *ngIf="lang=='de'" class="container-maps">
     <h2 class="section-title">LOCATION</h2>
     <p class="text">Gefeiert wird im Hoftheater in Baienfurt:</p>
     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="0px">
@@ -50,14 +173,33 @@
       [center]="location"
     ></google-map>
   </div>
+
+  <!-- EN -->
+  <div *ngIf="lang=='en'" class="container-maps">
+    <h2 class="section-title">LOCATION</h2>
+    <p class="text">The celebration will take place in the Hoftheater in Baienfurt:</p>
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="0px">
+      <p class="address">Hof 2</p>
+      <p class="address">88255 Baienfurt</p>
+      <p class="address">Germany</p>
+    </div>
+    <!-- <p class="text">Im restaurierten Farmhaus findet man alles vor was eine Hochzeit braucht. Es gibt genuegend Parkplaetze fuer alle Gaste, der traumhafte Aussenbreich lasst Sommergefuehle aufkommen und im Innenraum begeistert ein professioneller Theather-Saal mit traditionellem Holzfachwerk  🚘. </p> -->
+    <p class="text">Idyllically located between apple trees and fields in the middle of the Schussental, the old farmhouse with its various indoor and outdoor spaces offers a dreamlike ambience for our wedding. Enough parking spaces are also available!</p>
+    <google-map
+      height="500px"
+      width="100%"
+      [center]="location"
+    ></google-map>
+  </div>
 </section>
 
 <section id="rsvp">
-  <div class="container-rsvp">
+  <!-- DE -->
+  <div *ngIf="lang=='de'" class="container-rsvp">
     <h2 class="section-title">RSVP</h2>
     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
       <h3 class="text">Worauf wartest du?</h3>
-      <p class="text">Wir würden uns sehr freuen, wenn du vor dem 01. Februar 2022 deine Rückmeldung abgeben könntest ​❤️🙏​.</p>
+      <p class="text">Wir würden uns sehr freuen, wenn du vor dem 15. April 2022 deine Rückmeldung abgeben könntest ​❤️🙏​.</p>
       <div fxLayout="column" fxLayoutAlign="center strech" fxLayoutGap.gt-xs="10px">
 
         <!-- Row 1 -->
@@ -86,7 +228,7 @@
           ngClass="myWideClass" appearance="fill">
               <mat-label>Anzahl Personen</mat-label>
               <input matInput type="number" [(ngModel)]="inputData.amount" max="5" required>
-              <span matSuffix>pers.</span>
+              <!-- <span matSuffix>Person/en</span> -->
           </mat-form-field>
 
           <mat-form-field 
@@ -98,7 +240,7 @@
         </div>
 
         <mat-form-field ngClass.gt-xs="myNarrowClassPlus" ngClass="myWideClass" appearance="fill">
-          <mat-label>Kommentar (Allergien, vegetarisch, vegan, sonstiges)</mat-label>
+          <mat-label>Kommentar (Allergien, Vegetarisch, Vegan, Sonstiges)</mat-label>
           <textarea matInput
             autosize="cdkTextareaAutosize"
             cdkAutosizeMinRows="1"
@@ -130,6 +272,84 @@
       </div>
     </div>
   </div>
+
+  <!-- EN -->
+  <div *ngIf="lang=='en'" class="container-rsvp">
+    <h2 class="section-title">RSVP</h2>
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <h3 class="text">What are you waiting for?</h3>
+      <p class="text">We would be very happy if you could register before April 15, 2022 ​❤️🙏​.</p>
+      <div fxLayout="column" fxLayoutAlign="center strech" fxLayoutGap.gt-xs="10px">
+
+        <!-- Row 1 -->
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center" >
+
+          <mat-form-field 
+            ngClass.gt-xs="myNarrowClass"
+            ngClass="myWideClass" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput [(ngModel)]="inputData.name" required>
+          </mat-form-field>
+
+          <mat-form-field 
+            ngClass.gt-xs="myNarrowClass"
+            ngClass="myWideClass" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" [(ngModel)]="inputData.email" required>
+          </mat-form-field>
+
+        </div>
+        <!-- Row 2 -->
+        <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center">
+
+          <mat-form-field 
+          ngClass.gt-xs="myNarrowClass"
+          ngClass="myWideClass" appearance="fill">
+              <mat-label>Amount</mat-label>
+              <input matInput type="number" [(ngModel)]="inputData.amount" max="5" required>
+              <!-- <span matSuffix>Person/en</span> -->
+          </mat-form-field>
+
+          <mat-form-field 
+          ngClass.gt-xs="myNarrowClass"
+          ngClass="myWideClass" appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input matInput  type="tel" [(ngModel)]="inputData.phone">
+          </mat-form-field>
+        </div>
+
+        <mat-form-field ngClass.gt-xs="myNarrowClassPlus" ngClass="myWideClass" appearance="fill">
+          <mat-label>Comments (Allergies, Vegetarian, Vegan, Other)</mat-label>
+          <textarea matInput
+            autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            [(ngModel)]="inputData.comment"
+          ></textarea>
+        </mat-form-field>
+
+        <mat-form-field ngClass.gt-xs="myNarrowClassPlus" ngClass="myWideClass" appearance="fill">
+          <mat-label>
+            Song Requests
+            <mat-icon class="pe"
+            matTooltip='Here you can tell us special song requests. We will pass them on to our DJ'>
+              info_outline
+            </mat-icon>
+            
+          </mat-label>
+          <textarea matInput
+            autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+            [(ngModel)]="inputData.songs"
+          ></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="basic" class="full-width" (click)="submitRSVP()">Yes, I'll be there!
+      </button>
+      </div>
+    </div>
+  </div>
 </section>
 
 <div class="bottom-container"></div>
@@ -147,7 +367,8 @@
       </div>
   </div>
 
-  <p style="text-align: center; margin-bottom: 20px; color: #2F3E46">Erstellt von Alex mit ganz arg viel ❤️ für Nina</p>
+  <p *ngIf="lang=='de'"  style="text-align: center; margin-bottom: 20px; color: #2F3E46">Erstellt von Alex mit ganz arg viel ❤️ für Nina</p>
+  <p *ngIf="lang=='en'"  style="text-align: center; margin-bottom: 20px; color: #2F3E46">Crafter by Alex with lots of ❤️ for Nina</p>
 </div>
 
 

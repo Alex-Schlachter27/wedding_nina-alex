@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    <script>
+
+        const supportedLanguages = ["de", "en"];
+        const defaultLanguage = "en";
+
+        if (window.location.pathname != null) {
+
+            // Get subPath
+            const segments = window.location.pathname.split('/').filter(x => x.length > 0);
+
+            // Get query params
+            const queryParams = window.location.href.split("?")[1] ? "?" + window.location.href.split("?")[1] : "";
+
+            if (supportedLanguages.indexOf(segments[0]) >= 0)
+            {
+                const relPath = window.location.pathname + queryParams;
+                sessionStorage.setItem('path', relPath);
+                window.location = '/' + segments[0] + '/';
+            } else {
+                window.location = '/' + defaultLanguage;
+            }
+        }
+
+    </script>
+</body>
+</html>

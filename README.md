@@ -14,6 +14,22 @@ ng build --output-path docs --base-href /wedding_nina-alex/
 https://angular.io/guide/deployment
 
 
-// OLD //
+Or new:
 ng deploy --base-href=wedding_nina-alex
 https://efficientuser.com/2021/03/04/how-to-deploy-angular-app-on-github-pages-for-free/
+
+Serve english version: `ng serve --configuration=en`
+Serve general version: `ng serve`
+
+Generating base translation file:
+ng extract-i18n --output-path src/locales
+
+- add en.yml file (see akl)
+    - in package.json, add: "translate": "ng extract-i18n --output-path src/locales && cp src/locales/messages.xlf src/locales/messages.en.xlf && xlf-translate --lang-file ./src/locales/en.yml ./src/locales/messages.en.xlf"
+    --> "deploy": "npm run translate &&  ng deploy --base-href=wedding_nina-alex --localize && cp src/redirect/index.html dist/index.html"
+    -->   Not working: --localize is not an option of ng deploy
+
+
+## Translate
+To apply latest translations in da.yml run `npm run translate`
+- deploy with both translations!

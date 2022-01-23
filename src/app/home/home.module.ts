@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CommonModule } from '@angular/common';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -20,6 +21,7 @@ import { CommonModule } from '@angular/common';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatTooltipModule,
     FlexLayoutModule,]
 })

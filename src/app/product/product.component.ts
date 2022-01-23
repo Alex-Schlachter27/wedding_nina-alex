@@ -15,6 +15,7 @@ export class ProductComponent implements OnInit {
   
   public check: any;
   public passCode?: string;
+  public lang?: string;
   public inputData: {[x: string]: any} = {
     email: "",
     name: "",
@@ -22,6 +23,19 @@ export class ProductComponent implements OnInit {
     code: "",
     comment: "",
     songs: "",
+  }
+
+  public besties = {
+    tauer: {
+      tel: "46793391452",
+      telShow: "+46 793 391 452",
+      mail: "isabelle.tauer@web.de"
+    },
+    mossig: {
+      tel: "4915737953116",
+      telShow: "+49 1573 795 3116",
+      mail: "i.mossig@gmx.de"
+    }
   }
 
   public location = {
@@ -51,9 +65,15 @@ export class ProductComponent implements OnInit {
     // set code from params as this.passCode
     this._route.queryParams.subscribe(params => {
       console.log(params)
+      // get code
       if(params["code"] && params["code"] != undefined) {
         this.passCode = params["code"];
         this.inputData.code = this.passCode;
+      };
+
+      // get lang
+      if(params["lang"] && params["lang"] != undefined) {
+        this.lang = params["lang"];
       }
     });
 
@@ -66,7 +86,8 @@ export class ProductComponent implements OnInit {
   forceNavigate(name: string) {
     this.router.navigate(['/paragraph'], { fragment: name,
       queryParams: {
-        code: this.passCode
+        code: this.passCode,
+        lang: this.lang,        
       }
     });
   }
@@ -110,6 +131,10 @@ export class ProductComponent implements OnInit {
         duration: 5000,
       });
     }
+  }
+
+  public txtBesties(tel:string) {
+    location.href = `https://wa.me/${tel}/`;
   }
 
 }

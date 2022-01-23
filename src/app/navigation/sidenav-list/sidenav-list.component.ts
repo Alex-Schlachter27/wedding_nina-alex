@@ -10,6 +10,7 @@ export class SidenavListComponent implements OnInit {
   @Output() sidenavClose = new EventEmitter();
   
   public passCode?: string;
+  public lang?: string;
   public links: any = {
     schedule: "/paragraph#schedule",
     invitation: "/paragraph#invitation",
@@ -25,6 +26,11 @@ export class SidenavListComponent implements OnInit {
       console.log(params)
       if(params["code"] && params["code"] != undefined) {
         this.passCode = params["code"]
+      };
+
+      // get lang
+      if(params["lang"] && params["lang"] != undefined) {
+        this.lang = params["lang"];
       }
     });
 
@@ -36,7 +42,8 @@ export class SidenavListComponent implements OnInit {
   public onSidenavClose(name: string) {
     this.router.navigate(['/paragraph'], { fragment: name,
       queryParams: {
-        code: this.passCode
+        code: this.passCode,
+        lang: this.lang,
       } });
     this.sidenavClose.emit();
   }

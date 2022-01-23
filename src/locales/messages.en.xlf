@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="de" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="6026842608173511615" datatype="html">
+        <source>Bitte gebe deinen Zuganscode aus der Einladung ein:</source>
+        <target>Please enter your access code from the invitation:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+        <note priority="1" from="description">type the code</note>
+        <note priority="1" from="meaning">localized.home.typeCode</note>
+      </trans-unit>
+      <trans-unit id="22818073037130250" datatype="html">
+        <source>Zugangscode</source>
+        <target>Invitation Code</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home/home.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+        <note priority="1" from="description">code</note>
+        <note priority="1" from="meaning">localized.home.code</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -11,7 +11,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [ProductComponent],
@@ -26,7 +27,8 @@ import { GoogleMapsModule } from '@angular/google-maps'
     FlexLayoutModule,
     MatSnackBarModule,
     HttpClientModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    MatCardModule
   ]
 })
 export class ProductModule {}

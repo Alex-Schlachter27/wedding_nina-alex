@@ -16,12 +16,32 @@
         </button>
     </div>
     <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+        <ul *ngIf="lang=='de'" fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li>
+                <a [routerLink]="links.invitation" (click)="forceNavigate('invitation')">Einladung</a>
+            </li>
+            <li>
+                <a [routerLink]="links.schedule" (click)="forceNavigate('schedule')">Ablauf</a>
+            </li>
+            <li>
+                <a [routerLink]="links.support" (click)="forceNavigate('support')">Trauzeugen</a>
+            </li>
+            <li>
+                <a [routerLink]="links.location" (click)="forceNavigate('location')">Location</a>
+             </li>
+            <li>
+               <a [routerLink]="links.rsvp" (click)="forceNavigate('rsvp')">RSVP</a>
+            </li>
+        </ul>
+        <ul *ngIf="lang=='en'" fxLayout fxLayoutGap="15px" class="navigation-items">
             <li>
                 <a [routerLink]="links.invitation" (click)="forceNavigate('invitation')">Invitation</a>
             </li>
             <li>
                 <a [routerLink]="links.schedule" (click)="forceNavigate('schedule')">Schedule</a>
+            </li>
+            <li>
+                <a [routerLink]="links.support" (click)="forceNavigate('support')">Contact</a>
             </li>
             <li>
                 <a [routerLink]="links.location" (click)="forceNavigate('location')">Location</a>

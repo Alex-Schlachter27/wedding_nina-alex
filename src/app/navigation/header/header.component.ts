@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   @Output() public sidenavToggle = new EventEmitter();
   loading?: boolean;
   public passCode?: string;
+  public lang?: string;
   public links: any = {
     schedule: "/paragraph#schedule",
     invitation: "/paragraph#invitation",
@@ -33,6 +34,11 @@ export class HeaderComponent implements OnInit {
       if(params["code"] && params["code"] != undefined) {
         this.passCode = params["code"]
       }
+      
+      // get lang
+      if(params["lang"] && params["lang"] != undefined) {
+        this.lang = params["lang"];
+      }
     });
 
     Object.keys(this.links).map(key => {
@@ -48,7 +54,8 @@ export class HeaderComponent implements OnInit {
   forceNavigate(name: string) {
     this.router.navigate(['/paragraph'], { fragment: name,
       queryParams: {
-        code: this.passCode
+        code: this.passCode,
+        lang: this.lang,
       }
     });
   }
@@ -57,7 +64,8 @@ export class HeaderComponent implements OnInit {
     // if(this.passCode && this.passCode != undefined)
     this.router.navigate(['/home'], { 
       queryParams: {
-        code: this.passCode
+        code: this.passCode,
+        lang: this.lang,
       }
     });
   }
