@@ -23,6 +23,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatButtonModule,
     MatButtonToggleModule,
     MatTooltipModule,
-    FlexLayoutModule,]
+    FlexLayoutModule,
+  ]
 })
 export class HomeModule {}

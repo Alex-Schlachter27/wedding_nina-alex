@@ -22,10 +22,9 @@
             <input matInput [(ngModel)]="passCode">
         </mat-form-field>
 
-        <button  style="margin-bottom: 20px;" *ngIf="passCode" (click)="goToMain()" matTooltip="Und los!" mat-mini-fab color="primary" aria-label="Und los!">
+        <button  class="add-btn" *ngIf="passCode" (click)="goToMain()" matTooltip="Und los!" mat-mini-fab color="primary" aria-label="Und los!">
             <mat-icon>thumb_up_alt</mat-icon>
         </button>
-        
     </div>
 
     <!-- German or English -->
