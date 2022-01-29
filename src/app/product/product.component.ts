@@ -73,6 +73,8 @@ export class ProductComponent implements OnInit {
     location: "/paragraph#location",
   }
 
+  public successfullRSVP: boolean = false;
+
   constructor(
     private router: Router,
     private appSv: AppService,
@@ -121,7 +123,7 @@ export class ProductComponent implements OnInit {
     try {
       if(!this.inputData.name || this.inputData.name == "") throw "Bitte gebe deinen Namen an!";
       if(!this.inputData.email || this.inputData.email == "") throw "Bitte gebe deine Email-Adresse an!";
-      if(!this.inputData.email.includes("@")) throw "Bitte gebe eine richtige Email-Adresse an!";
+      if(!this.inputData.email.includes("@") || !this.inputData.email.includes(".")) throw "Bitte gebe eine richtige Email-Adresse an!";
       if(!this.inputData.amount || this.inputData.amount == "") throw "Bitte gebe die Anzahl der Personen an, die mit deinem Namen angemeldet werden sollen!";
       if(this.inputData.amount > 5) throw "Max. Anzahl pro Anmeldung 5 Personen!";
 
@@ -143,7 +145,8 @@ export class ProductComponent implements OnInit {
         }).subscribe(data => {
             console.log(data);
             if(data.result == "success") {
-              alert("Du hast dich erfolgreich angemeldet! Wir freuen uns schon auf dich 😊")
+              alert("Du hast dich erfolgreich angemeldet! Wir freuen uns schon auf dich 😊");
+              this.successfullRSVP = true;
             }
         })
 

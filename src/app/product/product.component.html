@@ -408,7 +408,7 @@
   <!-- DE -->
   <div *ngIf="lang=='de'" class="container-rsvp">
     <h2 class="section-title">RSVP</h2>
-    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+    <div *ngIf="successfullRSVP == false" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
       <h3 class="text">Worauf wartest du?</h3>
       <p class="text">Wir würden uns sehr freuen, wenn du vor dem 15. April 2022 deine Rückmeldung abgeben könntest ​❤️🙏​.</p>
       <div fxLayout="column" fxLayoutAlign="center strech" fxLayoutGap.gt-xs="10px">
@@ -482,12 +482,17 @@
       </button>
       </div>
     </div>
+    <div *ngIf="successfullRSVP == true" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <h3 class="text">Vielen Dank für deine Anmeldung!</h3>
+      <h3 class="text">Wir freuen uns schon riesig darauf mit dir zu feiern!❤️</h3>
+      <p class="text">Gerne kannst du die Website noch ein bisschen erkunden, um mehr Informationen zur Hochzeit zu bekommen! Falls noch Fragen offen sind, kannst du dich naürlich auch gerne direkt an uns wenden.</p>
+    </div>
   </div>
 
   <!-- EN -->
   <div *ngIf="lang=='en'" class="container-rsvp">
     <h2 class="section-title">RSVP</h2>
-    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+    <div *ngIf="successfullRSVP == false" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
       <h3 class="text">What are you waiting for?</h3>
       <p class="text">We would be very happy if you could register before April 15, 2022 ​❤️🙏​.</p>
       <div fxLayout="column" fxLayoutAlign="center strech" fxLayoutGap.gt-xs="10px">
@@ -559,6 +564,11 @@
         <button mat-raised-button color="basic" class="full-width" (click)="submitRSVP()">Yes, I'll be there!
       </button>
       </div>
+    </div>
+    <div *ngIf="successfullRSVP == true" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <h3 class="text">Thank you for letting us know that you come!</h3>
+      <h3 class="text">We are very much looking forward to celebrating with you!❤️</h3>
+      <p class="text">Feel free to explore this website and get more information about the wedding. If you need anything else, please let us know!</p>
     </div>
   </div>
 </section>
