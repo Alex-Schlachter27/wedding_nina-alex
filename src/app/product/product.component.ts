@@ -167,4 +167,8 @@ export class ProductComponent implements OnInit {
     location.href = website;
   }
 
+  viewMap(googleLink: string){
+    window.open(googleLink, "_blank");
+  }
+
 }

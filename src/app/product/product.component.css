@@ -6,6 +6,14 @@
   box-sizing: border-box;
 }
 
+.container-todo {
+  width: 100%;
+  background-color: #d5e0de;
+  padding: 10px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
 .container-maps {
   width: 100%;
   background-color: #f2f2f2ef;
@@ -154,4 +162,23 @@ Footer
   text-align:center;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  /* margin: 0; */
+  margin-left: 16px;
+  padding: 10px;
+  }
+
+  .clickable:hover{
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.header-tall {
+  height: 150px;
+}
+
+.header-small {
+  /* height: max-content; */
 }

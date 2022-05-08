@@ -18,7 +18,8 @@ export class HeaderComponent implements OnInit {
     support: "/paragraph#support",
     rsvp: "/paragraph#rsvp",
     location: "/paragraph#location",
-    hotels: "/paragraph#hotels",
+    hotels: "/paragraph#hotels",    
+    todo: "/paragraph#todo",
   }
   
   constructor(

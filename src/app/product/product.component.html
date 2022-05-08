@@ -195,6 +195,541 @@
   </div>
 </section>
 
+
+<!-- TO DO IN RAVENSBURG -->
+<section id="todo">
+  <!-- DE -->
+  <div *ngIf="lang=='de'" class="container-todo">
+    <h2 class="section-title">INSPIRATION RUND UM RAVENSBURG</h2>
+    <p class="text">Für Ravensburg und Umgebung können wr euch diese Inspiration für Aktivitäten und Kulinarik geben:</p>
+    <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="center start" fxLayoutAlign="center center"  fxLayoutGap="10px">
+
+      <!-- KULINARIK BODENSEE -->
+      <mat-card class="card" style="width: calc(300px - 32px)">
+        <mat-card-header ngClass="header-tall" ngClass.xs="header-small">
+          <mat-card-title>Kulinarik Bodensee</mat-card-title>
+          <mat-card-subtitle>Der Bodensee ist für seine Weingüter direkt am See bekannt. Falls ihr Zeit habt, müsst ihr unbedingt eines der Weingüter oder Restaurants am Seeufer besuchen! Hier eine kleine Zusammenstellung unserer Favoriten:</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\Weingut.webp" alt="Weingut">
+        <mat-card-content>
+          <ul>
+            <li>
+              Weingut Schmid
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Schmidt+am+Bodensee+-+Pinot+Die+Weinbar/@47.583458,9.6275103,16z/data=!4m15!1m9!3m8!1s0x0:0x7b4b1030b2f8cfa!2sSchmidt+am+Bodensee+-+R%C3%A4dle!5m2!4m1!1i2!8m2!3d47.5837322!4d9.625386!3m4!1s0x479b0f3b08b277b5:0xe9eac9199648ccfc!8m2!3d47.583458!4d9.6308248?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Weingut Aufricht
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Weingut+Aufricht/@47.6823605,9.2897039,15.2z/data=!4m5!3m4!1s0x479af8ec9114db6d:0x41ddc47704b204cc!8m2!3d47.681792!4d9.2972188?hl=en')"
+                >place
+              </mat-icon>
+            </li>            
+            <li>Heinzler am See
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Heinzler+am+See/@47.6611465,9.353071,17z/data=!3m1!4b1!4m8!3m7!1s0x479aff1dca609f2d:0x9278d22efe157fae!5m2!4m1!1i2!8m2!3d47.6611741!4d9.3553762?hl=en')"
+                >place
+              </mat-icon>
+            </li>            
+            <li>Rebgut Haltnau
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Rebgut+Haltnau/@47.684229,9.2862451,17z/data=!3m1!4b1!4m5!3m4!1s0x479af8f334e010e1:0x1640f7692a256077!8m2!3d47.68426!4d9.288392?hl=de')"
+                >place
+              </mat-icon>
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Aktivurlaub -->
+      <mat-card class="card" style="width: calc(300px - 32px)">
+        <mat-card-header ngClass="header-tall" ngClass.xs="header-small">
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Aktivurlaub</mat-card-title>
+          <mat-card-subtitle>Ob Wandern oder Fahrradfahren, Oberschwaben bietet zahlreiche erreichbare Ausflugsziele! Hier haben wir für euch ein paar rausgepickt:</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\Bodensee.jpg" alt="Pfänder">
+        <mat-card-content>
+          <ul>
+            <li>
+              Pfänder
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Pf%C3%A4nder/@47.5135138,9.7170934,12.67z/data=!4m5!3m4!1s0x479b6d599dddaa0b:0x2f0a3cb12bc03658!8m2!3d47.5077869!4d9.7801581!5m1!1e4?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Wandern am Hochgrat (Tagesausflug)
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Hochgrat/@47.495276,10.0613793,14z/data=!3m1!4b1!4m5!3m4!1s0x479b7c97a64b4705:0xb70c9d14b95d2824!8m2!3d47.4952778!4d10.0788889!5m1!1e4?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Wandern aufs Rubihorn (Tagesausflug)
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Rubihorn,+87561+Oberstdorf,+T%C3%BDskland/data=!4m2!3m1!1s0x479c9af3b306bbbd:0x9f18eb2c98a2dedf!5m1!1e4?sa=X&ved=2ahUKEwjcw_Lsl873AhXKtYsKHeFfBKcQ8gF6BAhpEAE&hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Fahrradtour an oder um den Bodensee
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Kressbronn+am+Bodensee,+Tyskland/@47.6081384,9.5271999,12z/data=!3m1!4b1!4m5!3m4!1s0x479b0604a1e76875:0x41f6bb7a5df8460!8m2!3d47.5968864!4d9.5982209?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Therme Meersburg
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Meersburg+Therme+GmbH/@47.6938984,9.2686189,15.31z/data=!4m13!1m7!3m6!1s0x479af8167165b413:0x41f6bb7a5df84a0!2sMeersburg,+Tyskland!3b1!8m2!3d47.6954836!4d9.2720915!3m4!1s0x479af8617dba0f63:0xae3134294c7fd22!8m2!3d47.6899655!4d9.2786447?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Therme Lindau
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Therme+Lindau/@47.5488458,9.7164356,15z/data=!4m2!3m1!1s0x0:0x5f3df0696d4614a5?sa=X&ved=2ahUKEwjx-K3Vl873AhUHR2wGHZ7LBhgQ_BJ6BAhREAU&hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Landungssteg Kressbronn (Badeplatz)
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Landungssteg+Kressbronn+am+Bodensee/@47.5859239,9.59675,17z/data=!3m1!4b1!4m5!3m4!1s0x479b0faabd9f439b:0xf9f8ecd70f399003!8m2!3d47.5859203!4d9.5989387?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Spazierengehen am Bodensee (Höhenweg ab Meersburg)
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/H%C3%B6henweg,+Meersburg,+Tyskland/@47.6866489,9.2869105,15.65z/data=!4m5!3m4!1s0x479af8929e5ca87b:0x6c5188b48cad704d!8m2!3d47.6863163!4d9.2905904!5m1!1e4?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- KULTUR -->
+      <mat-card class="card" style="width: calc(300px - 32px)">
+        <mat-card-header ngClass="header-tall" ngClass.xs="header-small">
+          <mat-card-title>Kultur</mat-card-title>
+          <mat-card-subtitle>Auch die Kultur darf nicht zu kurz kommen. Hier zwei sehr empfehlenswerte Museen zum Zeitvertreib:</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\Kunstmuseum.jpg" alt="Weingut">
+        <mat-card-content>
+          <ul>
+            <li>
+              Kunstmuseum Ravensburg 
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Kunstmuseum+Ravensburg/@47.7801544,9.6126858,17z/data=!3m1!4b1!4m5!3m4!1s0x479baf1e40fd7f13:0x74f9bf558e6b7225!8m2!3d47.7801544!4d9.6148745?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Kunsthaus Bregenz
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Kunsthaus+Bregenz/@47.504995,9.747223,15z/data=!4m2!3m1!1s0x0:0x72309033dc82334b?sa=X&ved=2ahUKEwiel9Duvc_3AhVaQvEDHd2DCKMQ_BJ6BAhdEAU&hl=en')"
+                >place
+              </mat-icon>
+            </li>      
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Ravensburg Kulinarik -->
+      <mat-card class="card" style="width: calc(300px - 32px)">
+        <mat-card-header ngClass="header-tall" ngClass.xs="header-small">
+          <mat-card-title>Kulinarik Ravensburg</mat-card-title>
+          <mat-card-subtitle>Das wichtigste was ihr wissen müsst zum Thema Essen und Trinken in Ravensburg:</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\Ratsstube.jpg" alt="Weingut">
+        <mat-card-content>
+          <ul>
+            <li>
+              Humpis
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Gastst%C3%A4tte+Humpis/@47.7804307,9.6135762,17z/data=!3m1!4b1!4m5!3m4!1s0x479baf1e60ef1b9f:0x1c0f199e83bb2650!8m2!3d47.780379!4d9.6156588?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Leibinger Bräustüble
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Leibinger+Br%C3%A4ust%C3%BCble/@47.7813203,9.619032,17z/data=!3m2!4b1!5s0x479baf1bdcc33a83:0x7703af795f2c4e37!4m5!3m4!1s0x479baf1bc405522f:0x4ea6431017d5a5fc!8m2!3d47.7813203!4d9.6212207?hl=en')"
+                >place
+              </mat-icon>
+            </li>     
+            <li>Zur Post in Kemmerlang
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Zur+Post/@47.7399102,9.6209468,17z/data=!3m1!4b1!4m5!3m4!1s0x479ba8c0957c64c9:0x4d834130bab31a85!8m2!3d47.7399089!4d9.6231495?hl=en')"
+                >place
+              </mat-icon>
+            </li>     
+            <li>Central
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Central/@47.7831168,9.6117102,17z/data=!3m1!4b1!4m5!3m4!1s0x479baf1d897bd609:0xa3ca99cb4c50bfc!8m2!3d47.7831168!4d9.6138989?hl=en')"
+                >place
+              </mat-icon>
+            </li>     
+            <li>Pano (Cafe)
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Pano+Bread+%26+Coffee/@47.7817955,9.6103492,17z/data=!3m1!4b1!4m5!3m4!1s0x479baee1f1319f8f:0x283f8c74cbf88551!8m2!3d47.7817955!4d9.6125379?hl=en')"
+                >place
+              </mat-icon>
+            </li>     
+            <li>Café Glücklich
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Cafe+Gl%C3%BCcklich/@47.7841667,9.6103113,17z/data=!3m1!4b1!4m5!3m4!1s0x479baee25fd97fc1:0xe28f0d2850944969!8m2!3d47.7841667!4d9.6125?hl=en')"
+                >place
+              </mat-icon>
+            </li>     
+            <li>Samstag Morgen Markt in Ravensburger Innenstadt
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Marktstra%C3%9Fe,+88212+Ravensburg,+Tyskland/@47.7801965,9.6132648,16.73z/data=!4m5!3m4!1s0x479baf1e8aeae6eb:0x64fd7ca4d9d4aef0!8m2!3d47.7801743!4d9.6157847?hl=en')"
+                >place
+              </mat-icon>
+            </li>   
+            <li>Ratsstube
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Ratsstube/@47.78125,9.6135,15z/data=!4m5!3m4!1s0x0:0x94d7fe50f493004e!8m2!3d47.7812504!4d9.613492?hl=en')"
+                >place
+              </mat-icon>
+            </li>   
+            <li>Irish Pub
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Irish+Pub/@47.7810087,9.6122039,17z/data=!3m1!4b1!4m5!3m4!1s0x479bafc1632c5e33:0xa5de35ca39c8a888!8m2!3d47.7810087!4d9.6143926?hl=en')"
+                >place
+              </mat-icon>
+            </li>   
+            <li>Balthes
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Cafe+Balthes/@47.7808953,9.6131745,17z/data=!3m2!4b1!5s0x479baf1e6fdfdf87:0x93605ed7bbf88a27!4m5!3m4!1s0x479baf1e6ff966d3:0x38d3f37e0e716c7e!8m2!3d47.7808953!4d9.6153632?hl=en')"
+                >place
+              </mat-icon>
+            </li>    
+            <li>Tres Amigos (zur späten Stunde!)
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Tres+Amigos/@47.7852023,9.6100654,17z/data=!3m1!4b1!4m5!3m4!1s0x479baee2e60abc97:0x40425be6d2cad9e9!8m2!3d47.7851779!4d9.6122395?hl=en')"
+                >place
+              </mat-icon>
+            </li>    
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <!-- EN -->
+  <div *ngIf="lang=='en'" class="container-todo">
+    <h2 class="section-title">INSPIRATION RAVENSBURG & SURROUNDINGS</h2>
+    <p class="text">For Ravensburg and the surrounding area, we can give you this inspiration for activities and culinary delights:</p>
+    <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="center start" fxLayoutAlign="center center"  fxLayoutGap="10px">
+
+      <!-- CULINARY LAKE CONSTANCE -->
+      <mat-card class="card" style="width: calc(300px - 32px)">
+        <mat-card-header ngClass="header-tall" ngClass.xs="header-small">
+          <mat-card-title>Culinary Lake Constance</mat-card-title>
+          <mat-card-subtitle>Lake Constance is famous for its lakeside wineries. If you have time, you must visit one of the wineries or restaurants just on the lakeshore! Here is a small compilation of our favourites:</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\Weingut.webp" alt="Weingut">
+        <mat-card-content>
+          <ul>
+            <li>
+              Weingut Schmid
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Schmidt+am+Bodensee+-+Pinot+Die+Weinbar/@47.583458,9.6275103,16z/data=!4m15!1m9!3m8!1s0x0:0x7b4b1030b2f8cfa!2sSchmidt+am+Bodensee+-+R%C3%A4dle!5m2!4m1!1i2!8m2!3d47.5837322!4d9.625386!3m4!1s0x479b0f3b08b277b5:0xe9eac9199648ccfc!8m2!3d47.583458!4d9.6308248?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Weingut Aufricht
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Weingut+Aufricht/@47.6823605,9.2897039,15.2z/data=!4m5!3m4!1s0x479af8ec9114db6d:0x41ddc47704b204cc!8m2!3d47.681792!4d9.2972188?hl=en')"
+                >place
+              </mat-icon>
+            </li>            
+            <li>Heinzler am See
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Heinzler+am+See/@47.6611465,9.353071,17z/data=!3m1!4b1!4m8!3m7!1s0x479aff1dca609f2d:0x9278d22efe157fae!5m2!4m1!1i2!8m2!3d47.6611741!4d9.3553762?hl=en')"
+                >place
+              </mat-icon>
+            </li>            
+            <li>Rebgut Haltnau
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Rebgut+Haltnau/@47.684229,9.2862451,17z/data=!3m1!4b1!4m5!3m4!1s0x479af8f334e010e1:0x1640f7692a256077!8m2!3d47.68426!4d9.288392?hl=de')"
+                >place
+              </mat-icon>
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Aktivurlaub -->
+      <mat-card class="card" style="width: calc(300px - 32px)">
+        <mat-card-header ngClass="header-tall" ngClass.xs="header-small">
+          <!-- <div mat-card-avatar class="card-image"></div> -->
+          <mat-card-title>Active Holidays</mat-card-title>
+          <mat-card-subtitle>Whether hiking or cycling, Oberschwaben offers numerous accessible excursion destinations! Here we have picked out a few for you:</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\Bodensee.jpg" alt="Pfänder">
+        <mat-card-content>
+          <ul>
+            <li>
+              Pfänder
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Pf%C3%A4nder/@47.5135138,9.7170934,12.67z/data=!4m5!3m4!1s0x479b6d599dddaa0b:0x2f0a3cb12bc03658!8m2!3d47.5077869!4d9.7801581!5m1!1e4?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Hiking on the Hochgrat (day trip)
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Hochgrat/@47.495276,10.0613793,14z/data=!3m1!4b1!4m5!3m4!1s0x479b7c97a64b4705:0xb70c9d14b95d2824!8m2!3d47.4952778!4d10.0788889!5m1!1e4?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Hiking on the Rubihorn (day trip)
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Rubihorn,+87561+Oberstdorf,+T%C3%BDskland/data=!4m2!3m1!1s0x479c9af3b306bbbd:0x9f18eb2c98a2dedf!5m1!1e4?sa=X&ved=2ahUKEwjcw_Lsl873AhXKtYsKHeFfBKcQ8gF6BAhpEAE&hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Bicycle tour at or around Lake Constance
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Kressbronn+am+Bodensee,+Tyskland/@47.6081384,9.5271999,12z/data=!3m1!4b1!4m5!3m4!1s0x479b0604a1e76875:0x41f6bb7a5df8460!8m2!3d47.5968864!4d9.5982209?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Thermal Spa Meersburg
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Meersburg+Therme+GmbH/@47.6938984,9.2686189,15.31z/data=!4m13!1m7!3m6!1s0x479af8167165b413:0x41f6bb7a5df84a0!2sMeersburg,+Tyskland!3b1!8m2!3d47.6954836!4d9.2720915!3m4!1s0x479af8617dba0f63:0xae3134294c7fd22!8m2!3d47.6899655!4d9.2786447?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Thermal Spa Lindau
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Therme+Lindau/@47.5488458,9.7164356,15z/data=!4m2!3m1!1s0x0:0x5f3df0696d4614a5?sa=X&ved=2ahUKEwjx-K3Vl873AhUHR2wGHZ7LBhgQ_BJ6BAhREAU&hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Landing Pier Kressbronn (swimming area)
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Landungssteg+Kressbronn+am+Bodensee/@47.5859239,9.59675,17z/data=!3m1!4b1!4m5!3m4!1s0x479b0faabd9f439b:0xf9f8ecd70f399003!8m2!3d47.5859203!4d9.5989387?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Walking on Lake Constance (path from Meersburg)
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/H%C3%B6henweg,+Meersburg,+Tyskland/@47.6866489,9.2869105,15.65z/data=!4m5!3m4!1s0x479af8929e5ca87b:0x6c5188b48cad704d!8m2!3d47.6863163!4d9.2905904!5m1!1e4?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- KULTUR -->
+      <mat-card class="card" style="width: calc(300px - 32px)">
+        <mat-card-header ngClass="header-tall" ngClass.xs="header-small">
+          <mat-card-title>Culture</mat-card-title>
+          <mat-card-subtitle>Culture should not be neglected either. Here are two highly recommended museums to pass the time:</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\Kunstmuseum.jpg" alt="Weingut">
+        <mat-card-content>
+          <ul>
+            <li>
+              Kunstmuseum Ravensburg 
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Kunstmuseum+Ravensburg/@47.7801544,9.6126858,17z/data=!3m1!4b1!4m5!3m4!1s0x479baf1e40fd7f13:0x74f9bf558e6b7225!8m2!3d47.7801544!4d9.6148745?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Kunsthaus Bregenz
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Kunsthaus+Bregenz/@47.504995,9.747223,15z/data=!4m2!3m1!1s0x0:0x72309033dc82334b?sa=X&ved=2ahUKEwiel9Duvc_3AhVaQvEDHd2DCKMQ_BJ6BAhdEAU&hl=en')"
+                >place
+              </mat-icon>
+            </li>      
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+      <!-- Ravensburg Kulinarik -->
+      <mat-card class="card" style="width: calc(300px - 32px)">
+        <mat-card-header ngClass="header-tall" ngClass.xs="header-small">
+          <mat-card-title>Culinary in Ravensburg</mat-card-title>
+          <mat-card-subtitle>The most important places you need to know about eating and drinking in Ravensburg:</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 200px; width: 300px" src="assets\images\Ratsstube.jpg" alt="Weingut">
+        <mat-card-content>
+          <ul>
+            <li>
+              Humpis
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Gastst%C3%A4tte+Humpis/@47.7804307,9.6135762,17z/data=!3m1!4b1!4m5!3m4!1s0x479baf1e60ef1b9f:0x1c0f199e83bb2650!8m2!3d47.780379!4d9.6156588?hl=en')"
+                >place
+              </mat-icon>
+            </li>
+            <li>Leibinger Bräustüble
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Leibinger+Br%C3%A4ust%C3%BCble/@47.7813203,9.619032,17z/data=!3m2!4b1!5s0x479baf1bdcc33a83:0x7703af795f2c4e37!4m5!3m4!1s0x479baf1bc405522f:0x4ea6431017d5a5fc!8m2!3d47.7813203!4d9.6212207?hl=en')"
+                >place
+              </mat-icon>
+            </li>     
+            <li>Zur Post in Kemmerlang
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Zur+Post/@47.7399102,9.6209468,17z/data=!3m1!4b1!4m5!3m4!1s0x479ba8c0957c64c9:0x4d834130bab31a85!8m2!3d47.7399089!4d9.6231495?hl=en')"
+                >place
+              </mat-icon>
+            </li>     
+            <li>Central
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Central/@47.7831168,9.6117102,17z/data=!3m1!4b1!4m5!3m4!1s0x479baf1d897bd609:0xa3ca99cb4c50bfc!8m2!3d47.7831168!4d9.6138989?hl=en')"
+                >place
+              </mat-icon>
+            </li>     
+            <li>Pano (Cafe)
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Pano+Bread+%26+Coffee/@47.7817955,9.6103492,17z/data=!3m1!4b1!4m5!3m4!1s0x479baee1f1319f8f:0x283f8c74cbf88551!8m2!3d47.7817955!4d9.6125379?hl=en')"
+                >place
+              </mat-icon>
+            </li>     
+            <li>Café Glücklich
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Cafe+Gl%C3%BCcklich/@47.7841667,9.6103113,17z/data=!3m1!4b1!4m5!3m4!1s0x479baee25fd97fc1:0xe28f0d2850944969!8m2!3d47.7841667!4d9.6125?hl=en')"
+                >place
+              </mat-icon>
+            </li>     
+            <li>Saturday morning market in Ravensburg city centre
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Marktstra%C3%9Fe,+88212+Ravensburg,+Tyskland/@47.7801965,9.6132648,16.73z/data=!4m5!3m4!1s0x479baf1e8aeae6eb:0x64fd7ca4d9d4aef0!8m2!3d47.7801743!4d9.6157847?hl=en')"
+                >place
+              </mat-icon>
+            </li>   
+            <li>Ratsstube
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Ratsstube/@47.78125,9.6135,15z/data=!4m5!3m4!1s0x0:0x94d7fe50f493004e!8m2!3d47.7812504!4d9.613492?hl=en')"
+                >place
+              </mat-icon>
+            </li>   
+            <li>Irish Pub
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Irish+Pub/@47.7810087,9.6122039,17z/data=!3m1!4b1!4m5!3m4!1s0x479bafc1632c5e33:0xa5de35ca39c8a888!8m2!3d47.7810087!4d9.6143926?hl=en')"
+                >place
+              </mat-icon>
+            </li>   
+            <li>Balthes
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Cafe+Balthes/@47.7808953,9.6131745,17z/data=!3m2!4b1!5s0x479baf1e6fdfdf87:0x93605ed7bbf88a27!4m5!3m4!1s0x479baf1e6ff966d3:0x38d3f37e0e716c7e!8m2!3d47.7808953!4d9.6153632?hl=en')"
+                >place
+              </mat-icon>
+            </li>    
+            <li>Tres Amigos (late night!)
+              <mat-icon 
+                [inline]="true" 
+                class="clickable" 
+                (click)="viewMap('https://www.google.com/maps/place/Tres+Amigos/@47.7852023,9.6100654,17z/data=!3m1!4b1!4m5!3m4!1s0x479baee2e60abc97:0x40425be6d2cad9e9!8m2!3d47.7851779!4d9.6122395?hl=en')"
+                >place
+              </mat-icon>
+            </li>    
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+</section>
+
 <section id="hotels">
   <!-- DE -->
   <div *ngIf="lang=='de'" class="container-hotels">

@@ -18,6 +18,7 @@ export class SidenavListComponent implements OnInit {
     rsvp: "/paragraph#rsvp",
     location: "/paragraph#location",
     hotels: "/paragraph#hotels",
+    todo: "/paragraph#todo",
   }
   constructor(
     private router: Router,
